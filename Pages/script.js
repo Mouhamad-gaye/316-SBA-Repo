@@ -1,4 +1,4 @@
-//Adding an event listener to the add to cart button
+//Adding an event listener to the add to cart buttons
 
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cart = []
@@ -15,18 +15,46 @@ addToCart.forEach(button => {
     })
 })
 
-let cartMenu = document.getElementById('cart');
+
+ //Get the cart button to be interactive
+
+
+let cartMenu = document.querySelector('a[href="#cart"]')
 let cartDiv = document.createElement('div');
-let cartItems = document.createElement('Cart Items');
-let cartTotal = document.createElement('Cart Total');
-let cartClear = document.createElement('Clear Cart');
+let cartItems = document.createElement('Items');
+let cartTotal = document.createElement('Total');
+let cartClear = document.createElement('Clear');
 
 cartDiv.appendChild(cartItems)
 cartDiv.appendChild(cartTotal)
 cartDiv.appendChild(cartClear)
-cartDiv.appendChild(cartMenu)
+cartMenu.appendChild(cartDiv)
 
-function 
+console.log(cartMenu)
+
+// Add event listener to the cart button
+
+cartMenu.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('Clicked')
+})
+
+    
+
+// Adding items in cart
+
+function addItemsCart (jerseys) {
+    let selectedItems = cart.filter(item => item.id === jerseyId)
+    // console.log(selectedItems)
+    if(selectedItems){
+        selectedItems.quantity++
+    } else {
+        cart.push({...jerseys, quantity: 1 })
+        // console.log(cart)
+    }
+   
+   
+}
 
 
 
