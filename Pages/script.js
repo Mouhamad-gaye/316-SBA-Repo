@@ -6,8 +6,9 @@ addToCart.forEach(button => {
     button.addEventListener('click', function(){
         // console.log(button)
     let jerseyId = button.getAttribute('id')
-    // console.log(jerseyId)
-    cart.push({id:jerseyId, name: })
+    let jerseyName = button.parentElement.querySelector('h3').textContent
+    let jerseyImage = button.parentElement.querySelector('img').getElementsByTagName('img')
+    cart.push({id:jerseyId, name: jerseyName, Image: jerseyImage})
     console.log(cart)
 
 
