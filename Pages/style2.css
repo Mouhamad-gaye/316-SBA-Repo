@@ -1,14 +1,14 @@
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light grey background */
+    background-color: #f8f9fa; 
 }
 
-/* Header Section */
+
 header {
-    background-color: #007bff; /* Blue background */
+    background-color: #007bff; 
     color: white;
     padding: 20px;
 }
@@ -44,11 +44,11 @@ header nav {
     text-decoration: underline;
 }
 
-/* Banner Section */
+
 .banner {
     text-align: center;
     padding: 50px;
-    background: linear-gradient(to right, #007bff, #0056b3); /* Gradient background */
+    background: linear-gradient(to right, #007bff, #0056b3); 
     color: white;
     background-image: url(/Images/background\ usa.jpg);
 }
@@ -62,7 +62,7 @@ header nav {
     font-size: 18px;
 }
 
-/* Catalog Section */
+
 .catalog {
     padding: 20px;
 }
@@ -112,7 +112,7 @@ header nav {
 .product-card button {
     padding: 10px 15px;
     border: none;
-    background-color: #28a745; /* Green button */
+    background-color: #28a745; 
     color: white;
     font-size: 14px;
     border-radius: 3px;
@@ -121,6 +121,6 @@ header nav {
 }
 
 .product-card button:hover {
-    background-color: #218838; /* Darker green */
+    background-color: #218838; 
 }
 
