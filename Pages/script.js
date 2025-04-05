@@ -26,13 +26,26 @@ console.log(cartMenu)
 
 
 // Add event listener to the cart link
+let cart1 = []
+function addItemsCart(items) {
+    let selectedItems = cart1.find(items => items.id === jerseys.id)
+    console.log(selectedItems)
+    if (selectedItems) {
+        selectedItems.quantity++
+    } else {
+        cart1.push({ ...items, quantity: 1 })
+        console.log(cart1)
+    }
+
+
+}
+
 
 cartMenu.addEventListener('click', (e) => {
     e.preventDefault()
     console.log('Clicked')
     cart1.forEach(items => {
         let cartItems = document.createElement('div');
-        
         cartItems.textContent = `${items.name} - $${items.price} (x${items.quantity})`
         cartDiv.appendChild(cartItems)
         console.log(cartItems)
@@ -56,16 +69,3 @@ cartMenu.addEventListener('click', (e) => {
 
 // Adding items in cart
 
-let cart1 = []
-function addItemsCart(items) {
-    let selectedItems = cart1.find(items => items.id === jerseys.id)
-    console.log(selectedItems)
-    if (selectedItems) {
-        selectedItems.quantity++
-    } else {
-        cart1.push({ ...items, quantity: 1 })
-        console.log(cart1)
-    }
-
-    
-}
