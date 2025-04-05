@@ -30,6 +30,28 @@ console.log(cartMenu)
 cartMenu.addEventListener('click', (e) => {
     e.preventDefault()
     console.log('Clicked')
+    cart1.forEach(items => {
+        let cartItems = document.createElement('div');
+        
+        cartItems.textContent = `${items.name} - $${items.price} (x${items.quantity})`
+        cartDiv.appendChild(cartItems)
+        console.log(cartItems)
+    })
+
+    let Total = cart1.reduce((acc, items) => acc + items.price * quantity, 0)
+    let cartTotal = document.createElement('div');
+    cartTotal.textContent = `Total: $${Total.toFixed(2)}`
+    cartDiv.appendChild(cartTotal)
+    console.log(cartTotal)
+
+    let cartClear = document.createElement('button');
+    cartClear.textContent = 'Clear Cart';
+    cartClear.addEventListener('click', () => {
+        cart1 = []
+        addItemsCart()
+    })
+    cartDiv.appendChild(cartClear)
+    console.log(cartClear)
 })
 
 // Adding items in cart
@@ -45,25 +67,5 @@ function addItemsCart(items) {
         console.log(cart1)
     }
 
-    cart1.forEach(items => {
-        let cartItems = document.createElement('div');
-        cartItems.textContent = `${items.name} - $${items.Price} (x${items.quantity})`
-        cartDiv.appendChild(cartItems)
-        console.log(cartItems)
-    })
-
-    let Total = cart1.reduce((acc, items) => acc + items.Price * quantity, 0)
-    let cartTotal = document.createElement('div');
-    cartTotal.textContent = `Total: $${cartTotal.toFixed(2)}`
-    cartDiv.appendChild(cartTotal)
-    console.log(cartTotal)
-
-    let cartClear = document.createElement('button');
-    cartClear.textContent = 'Clear Cart';
-    cartClear.addEventListener('click', () => {
-        cart1 = []
-        addItemsCart()
-    })
-    cartDiv.appendChild(cartClear)
-    console.log(cartClear)
+    
 }
